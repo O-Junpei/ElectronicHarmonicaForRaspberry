@@ -86,7 +86,7 @@ class System(threading.Thread):
     def play(self,sound):
         self.stream.write(self.tone(sound[0],sound[1],sec=self.tempo))
 
-    def tone(self,val,freq,sec=1,velocity=.2,rate=44100):
+    def tone(self,val,freq,sec=0.01,velocity=.2,rate=44100):
         w = rate / freq
         def gen():
             if val == 0:
